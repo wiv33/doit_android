@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:010-2255-3322"));
         startActivity(myIntent);
     }
-    public void onBUtton3Clicked(View v) {
+    public void onButton3Clicked(View v) {
         Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivity(myIntent);
     }

@@ -39,7 +39,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:onClick="onBUtton3Clicked"
+        android:onClick="onButton3Clicked"
         android:text="메뉴화면 띄우기"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
