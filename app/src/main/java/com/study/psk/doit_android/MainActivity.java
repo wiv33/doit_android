@@ -1,12 +1,14 @@
 package com.study.psk.doit_android;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+    ImageView imageView;
+    ImageView imageView2;
+    int imageIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +49,26 @@ public class MainActivity extends AppCompatActivity {
         //int[] ViewBackgroundHelper = { 0x10100d4, 0x7f020034, 0x7f020035 };
         //int[] ViewStubCompat = { 0x10100d0, 0x10100f2, 0x10100f3 };
 
-
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView2 = (ImageView) findViewById(R.id.imageView2);
+    }
+    public void onButtonClicked(View v) {
+        changeImage();
     }
 
-    public void onButton1Clicked(View v) {
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.naver.com"));
-        startActivity(myIntent);
+    private void changeImage() {
+        if (imageIndex == 0) {
+            imageView.setVisibility(View.VISIBLE);
+            imageView2.setVisibility(View.INVISIBLE);
+
+            imageIndex = 1;
+        } else if (imageIndex == 1) {
+            imageView.setVisibility(View.INVISIBLE);
+            imageView2.setVisibility(View.VISIBLE);
+
+            imageIndex = 0;
+        }
     }
-    public void onButton2Clicked(View v) {
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:010-2255-3322"));
-        startActivity(myIntent);
-    }
-    public void onButton3Clicked(View v) {
-        Intent myIntent = new Intent(getApplicationContext(), MenuActivity.class);
-        startActivity(myIntent);
-    }
+
+
 }
